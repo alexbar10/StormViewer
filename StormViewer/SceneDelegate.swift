@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  StormViewer
 //
-//  Created by Parkimovil on 10/12/19.
+//  Created by Alejandro Barranco on 10/12/19.
 //  Copyright © 2019 alexbar10. All rights reserved.
 //
 
