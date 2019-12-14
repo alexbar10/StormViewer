@@ -56,8 +56,20 @@ extension ViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Detail", for: indexPath)
         cell.textLabel?.text = pictures[indexPath.row]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 1: try loading the "Detail" view controller and typecasting it to be DetailViewController
+        if let vc = storyboard?.instantiateViewController(identifier: "Picture") as? DetailViewController {
+            
+            // 2: Success: set its selectedimage property
+            vc.selectedImage = pictures[indexPath.row]
+            
+            // 3: Push it onto the navigation controller
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
